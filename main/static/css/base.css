@@ -5,6 +5,17 @@
 }
 
 
+@font-face {
+    font-family: "Blackblade";
+    src: url(../font/Blackblade.ttf);
+}
+
+span {
+    font-family: "Blackblade", sans-serif;
+    font-size: 48px;
+    line-height: 0;
+}
+
 body {
     font-family: "Carrois Gothic", sans-serif;
     font-size: 18px;
@@ -427,3 +438,4 @@ h5 {
 .add-to-cart-btn:hover {
     border: 1px solid #000;
 }
+
