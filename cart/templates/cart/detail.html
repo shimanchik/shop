@@ -15,12 +15,7 @@
         {% with product=item.product %}
           <div class="cart-card d-flex">
             <div class="cart-card-img">
-              <img src="{% if product.image %}
-                  {{ product.image.url }}
-                {% else %}
-                  {% static 'img/noimage.jpg' %}
-                {% endif %}"
-                alt="" />
+              <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/noimage.jpg' %}{% endif %}"alt="" />
             </div>
             <div class="cart-card-info">
               <div class="cart-card-name">
@@ -36,12 +31,12 @@
             </form>
             <div class="cart-card-price">
               {% if product.discount %}
-                <div class="cart-discount d-flex gap-2">
-                  <p class="line">$ {{ product.price }}</p>
-                  <p>$ {{ product.sell_price }}</p>
+                <div class="cart-price">
+                  <p class="line opac">$ {{ product.price }}</p>
+                  <p class="cart-total-price-ots">$ {{ product.sell_price }}</p>
                 </div>
               {% else %}
-                <p class="price">$ {{ product.price }}</p>
+                <p class="cart-total-price">$ {{ product.price }}</p>
               {% endif %}
             </div>
           </div>

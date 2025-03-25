@@ -15,9 +15,9 @@ class OrderCreateForm(forms.ModelForm):
             self.initial['last_name'] = self.request.user.last_name
             self.initial['email'] = self.request.user.email
             
-        def save(self,commit=True):
-            order = super().save(commit=False)
-            order.user = self.request.user
-            if commit:
-                order.save()
-            return order
+    def save(self, commit=True):
+        order = super().save(commit=False)
+        order.user = self.request.user
+        if commit:
+            order.save()
+        return order

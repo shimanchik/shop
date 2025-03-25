@@ -4,7 +4,7 @@
 {% block title %}Create Order{% endblock title %}
 
 {% block content %}
-    <div class="'forcreate">
+    <div class="forcreate d-flex">
         <div class="profile bg-white p-4 mb-4 mx-2">
             <h2 class="mb-2">Create Order</h2>
             <form action="" method="post" class="order-form">
@@ -43,9 +43,9 @@
                 {% csrf_token %}
             </form>
         </div>
-        <div class="checkout">
-            <h1>Checkout</h1>
-            <div class="order-info">
+        <div class="checkout p-4 mb-4 mx-2">
+            <h1 class="mb-2">Checkout</h1>
+            <div class="order-info col-md-12 mb-3">
                 {% for item in cart %}
                     <li>
                         {{ item.quantity }} * {{ item.product.name }}

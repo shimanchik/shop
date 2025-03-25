@@ -1,17 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap');
 
 :root {
-    --box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.363)
+    --box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.363);
 }
 
-
 @font-face {
-    font-family: "Blackblade";
-    src: url(../font/Blackblade.ttf);
+    font-family: "dark";
+    src: url(../fonts/Blackblade.ttf);
 }
 
 span {
-    font-family: "Blackblade", sans-serif;
+    font-family: "dark", "Dark Wizards", serif;
     font-size: 48px;
     line-height: 0;
 }
@@ -45,6 +44,7 @@ h2 {
 
 h3 {
     font-size: 36px;
+
 }
 
 h5 {
@@ -53,19 +53,44 @@ h5 {
     font-weight: 600;
 }
 
-.header-container {
-    box-sizing: border-box;
-    max-width: 1400px;
-    margin: 0 auto;
-    justify-content: space-between;
-    padding: 0 15px;
-    align-items: center;
+form select {
+    background-color: #fff;
+    border: none;
 }
 
-.container {
-    box-sizing: border-box;
-    max-width: 1600px;
-    margin: 0 auto;
+form select:focus {
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+input:focus {
+    box-shadow: none;
+}
+
+.window {
+    width: 1210px;
+    height: 600px;
+    margin-top: 100px;
+    border: 1px solid #00000036;
+    border-radius: 10px;
+}
+
+.window-login {
+    width: 1000px;
+    height: 600px;
+    margin-top: 100px;
+    border: 1px solid #00000036;
+    border-radius: 10px;
+}
+
+.windowp {
+    width: 1210px;
+    height: 600px;
+    margin-top: 100px;
+    border: 1px solid #00000036;
+    border-radius: 10px;
+    background-image: url(../img/window.png);
+    background-repeat: no-repeat;
 }
 
 .header {
@@ -84,6 +109,21 @@ h5 {
     left: 44.5%;
 }
 
+.header-container {
+    box-sizing: border-box;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.container {
+    box-sizing: border-box;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
 .home {
     align-items: center;
 }
@@ -91,6 +131,11 @@ h5 {
 .home-title {
     margin-top: 210px;
     margin-bottom: 50px;
+}
+
+.home-cards {
+    width: 650px;
+    overflow-x: hidden;
 }
 
 .home-card {
@@ -103,7 +148,7 @@ h5 {
 }
 
 .home-card:hover {
-    border: 1px solid #000;
+    border: 1px solid #000000;
 }
 
 .title-card {
@@ -111,6 +156,7 @@ h5 {
     margin-top: 20px;
     min-height: 70px;
 }
+
 
 .card-img {
     width: 195px;
@@ -129,7 +175,7 @@ h5 {
     justify-content: center;
     width: 180px;
     height: 50px;
-    border: 1px solid #00000027;
+    border: 1px solid #0000004b;
     border-radius: 5px;
     background-image: url(../img/btnh.png);
     transition: all .4s ease;
@@ -137,7 +183,14 @@ h5 {
 }
 
 .home-btn:hover {
-    border: 1px solid #000;
+    border: 1px solid #000000;
+}
+
+.dada {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.1;
+    top: -16%;
 }
 
 .frame1 {
@@ -205,33 +258,27 @@ h5 {
     font-size: 56px;
 }
 
-.cart-discount {
+.card-discount {
     margin-top: -10px;
     font-weight: 600;
 }
 
-.cart-discount .price {
+.card-discount .price {
     margin-top: -1px;
 }
 
 .line {
     opacity: 0.7;
     text-decoration: line-through;
-    font-weight: 300px;
+    font-weight: 300;
 }
 
 .cart-btn {
     width: 180px;
     height: 50px;
-    margin-top: 20px;
-    border: 1px solid #00000027;
-    border-radius: 5px;
-    transition: all .4s ease;
-    z-index: 2;
-}
-
-.cart-btn:hover {
     border: 1px solid #000;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 .main {
@@ -286,19 +333,6 @@ h5 {
     background-image: url(../img/categories-gtn.png);
 }
 
-.pagination {
-    display: flex;
-    position: absolute;
-    bottom: 0%;
-    left: 46%;
-    gap: 12px;
-    justify-content: center;
-}
-
-.disabled {
-    opacity: 0.2;
-}
-
 .grob {
     width: 35px;
     height: 35px;
@@ -317,6 +351,19 @@ h5 {
     margin-top: -40px;
 }
 
+.pagination {
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+    left: 46%;
+    gap: 12px;
+    justify-content: center;
+}
+
+.disabled {
+    opacity: 0.2;
+}
+
 .cart {
     flex-direction: column;
 }
@@ -327,7 +374,19 @@ h5 {
 }
 
 .cart-cards {
-    max-height: 52vh;
+    max-height: 52vh; 
+    max-width: 600px;
+    overflow-y: auto;
+}
+
+.cart-cardsrem {
+    max-height: 52vh; 
+    width: 600px;
+    overflow-y: auto;
+}
+
+.cart-cardsproc {
+    max-height: 40vh; 
     width: 600px;
     overflow-y: auto;
 }
@@ -354,7 +413,7 @@ h5 {
 .cart-card-img img {
     width: 125px;
     height: 125px;
-    border: 1px solid #00000042;
+    border: 1px solid #00000086;
 }
 
 .cart-card-name {
@@ -369,14 +428,14 @@ h5 {
     justify-content: center;
     width: 100px;
     height: 30px;
-    border: 1px solid #00000042;
+    border: 1px solid #00000034;
     border-radius: 5px;
     font-size: 16px;
     transition: all 0.5s ease;
 }
 
 .remove-btn:hover {
-    border: 1px solid #000;
+    border: 1px solid #000000;
 }
 
 .cart-btn {
@@ -385,14 +444,14 @@ h5 {
     justify-content: center;
     width: 180px;
     height: 50px;
-    border: 1px solid #00000042;
+    border: 1px solid #00000034;
     border-radius: 5px;
-    font-size: 16px;
+    margin: 0;
     transition: all 0.5s ease;
 }
 
 .cart-btn:hover {
-    border: 1px solid #000;
+    border: 1px solid #000000;
 }
 
 .cart-price {
@@ -427,7 +486,7 @@ h5 {
     justify-content: center;
     width: 180px;
     height: 50px;
-    border: 1px solid #00000042;
+    border: 1px solid #00000034;
     border-radius: 5px;
     margin: 0;
     transition: all 0.5s ease;
@@ -436,6 +495,308 @@ h5 {
 }
 
 .add-to-cart-btn:hover {
-    border: 1px solid #000;
+    border: 1px solid #000000;
 }
 
+.login {
+    width: 400px;
+    height: 600px;
+    margin-top: 100px;
+    border: 1px solid #00000036;
+    border-radius: 10px;
+}
+
+.login-reg {
+    width: 600px;
+    height: 600px;
+    margin-top: 100px;
+    border: 1px solid #00000036;
+    border-radius: 10px;
+}
+
+.login-title h2 {
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.form-style {
+    width: 250px;
+    margin-left: 40px;
+}
+
+.login-btn {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #00000034;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+}
+
+.login-btn:hover {
+    border: 1px solid #000000;
+}
+
+.reset-pass {
+    margin-left: 40px;
+    margin-top: 200px;
+}
+
+.form-stylereg {
+    width: 250px;
+    margin-left: 20px;
+}
+
+.form-styleprofile {
+    width: 250px;
+}
+
+.profile {
+    width: 570px;
+    height: 680px;
+    margin-top: 100px;
+    border: 1px solid #00000036;
+    border-radius: 10px;
+}
+
+.box2 {
+    margin-top: 212px;
+    margin-left: 20px;
+}
+
+.box22 {
+    margin-left: 20px;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    border: 1px solid #00000034;
+    border-radius: 5px;
+    margin: 0;
+    transition: all 0.5s ease;
+    background-color: #fff;
+}
+
+.profile-btn:hover {
+    border: 1px solid #000000;
+}
+
+.checkout {
+    margin-top: 100px;
+    width: 600px;
+}
+
+.checkout h1 {
+    font-weight: 600;
+}
+
+
+.order-info {
+    margin-left: 40px;
+    width: 570px;
+    height: 680px;   
+}
+
+.order-info p {
+    font-weight: 600;
+}
+
+.order-form input {
+    border-radius: 5px;
+    width: 250px;
+    height: 38px;
+    background-color: #fff;
+    box-shadow: none;
+    border: 1px solid #00000046;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 50px;
+    border: 1px solid #00000034;
+    border-radius: 5px;
+    margin: 0;
+    transition: all 0.5s ease;
+    background-color: #fff;
+}
+
+.order-btn:hover {
+    border: 1px solid #000000;
+}
+
+.paynow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 50px;
+    border: 1px solid #00000034;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    background-color: #fff;
+}
+
+.paynow:hover {
+    border: 1px solid #000000;
+}
+
+.pay-title {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.pay-card {
+    width: 600px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.payform {
+    position: fixed;
+    top: 75%;
+}
+
+.castle {
+    position: absolute;
+    width: 450px;
+    height: 650px;
+    left: 37%;
+    top: 15%;
+}
+
+.castlep {
+    position: absolute;
+    width: 450px;
+    height: 650px;
+    left: 45%;
+    top: 15%;
+}
+
+.vl {
+    position: absolute;
+    width: 1px;
+    height: 500px;
+    background-color: #000;
+    left: 32%;
+    top: 25%;   
+    opacity: 0.2;
+}
+
+.orderss {
+    margin-left: 70px;
+    width: 520px;
+    max-height: 52vh; 
+    overflow-y: auto;
+}
+
+.order-cart {
+    width: 500px;
+    border: 1px solid #00000034;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 0;
+    transition: all 0.5s ease;
+    margin-bottom: 10px;
+}
+
+.order-cart:hover {
+    border: 1px solid #000000;
+}
+
+.order-title {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.order-desc {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.orders h2 {
+    margin-left: 60px;
+}
+
+.dadad {
+    font-family: "Carrois Gothic", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.orders-carts {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.image-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.prev-btn, .next-btn {
+    color: #000;
+    background-color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.next-btn:hover {
+    background-color: #00000013;
+}
+
+.prev-btn:hover {
+    background-color: #00000013;
+}
+
+.prev-btn {
+    position: absolute;
+    left: 8%;
+}
+
+.next-btn {
+    position: absolute;
+    left: 41%;
+}
+
+.notorders {
+    margin-left: 70px;
+    margin-top: 20px;
+}
+
+.mainvl {
+    position: absolute;
+    height: 650px;
+    width: 1px;
+    background-color: #000;
+    opacity: 0.2;
+    left: 18%;
+    top: 23%;
+}
+
+.regform button {
+    margin-left: 20px;
+    margin-top: 30px;
+}
